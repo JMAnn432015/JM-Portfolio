@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const ejs = require('ejs');
 
+let port = process.env.PORT || 8000;
+
 app.set('view engine','ejs');
 
 app.use(express.static('public'));
@@ -26,7 +28,7 @@ app.get('/contact',(req,res)=>{
     res.render('contact');
 });
 
-app.listen(8000,(err)=>{
+app.listen(port,(err)=>{
     if(err) throw err;
     console.log('Listening at port 8000');
 });
