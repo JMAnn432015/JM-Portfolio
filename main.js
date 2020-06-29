@@ -1,8 +1,22 @@
 const express = require('express');
 const app = express();
 const ejs = require('ejs');
+const nodemailer = require('nodemailer');
+const bodyParser = require('body-parser');
 
 let port = process.env.PORT || 8000;
+
+let urlencodedParser = bodyParser.urlencoded({ extended: false })
+
+let transport = nodemailer.createTransport({
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
+    auth: {
+       user: 'jmannacera@gmail.com',
+       pass: 'annmahal'
+    }
+});
 
 app.set('view engine','ejs');
 
@@ -25,6 +39,22 @@ app.get('/blog',(req,res)=>{
 });
 
 app.get('/contact',(req,res)=>{
+    res.render('contact');
+});
+
+app.post('/mail', urlencodedParser, (req,res)=>{
+    const message = {
+        to: 'jmmonacera@gmail.com',         // List of recipients
+        subject: req.body.subject, // Subject line
+        text: req.body.message // Plain text body
+    };
+    transport.sendMail(message, function(err, info) {
+        if (err) {
+          console.log(err)
+        } else {
+          console.log(info);
+        }
+    });
     res.render('contact');
 });
 

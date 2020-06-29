@@ -10,17 +10,93 @@
 						<div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 text-center">
 							<div class="details-holder">
 								<div class="align-vertical">
-									<img alt="Logo" src="img/logotype_dark.png">
+									<img alt="Logo" src="img/JM-logo.png">
 									<p class="lead">
-										hello@johnsmith.com<br>
-										+70 423 942 012</p>
-									<p>200 Avenue Street,<br>New York</p>
+										jmannacera@gmail.com<br>
+										(032)-479-3524<br>
+										+639-999-898-403<br>
+										+639-058-624-282</p>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</section>
+	<!--Section: Contact v.2-->
+<section class="mb-4">
+
+    <!--Section description-->
+    <p class="text-center w-responsive">Do you like my work? Please contact me and let us discuss your project.</p>
+
+    <div class="row">
+
+        <!--Grid column-->
+        <div class="col-md-10 mx-auto">
+            <form id="contact-form" name="contact-form" action="/mail" method="POST">
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-6">
+                        <div class="md-form">
+                            <input type="text" id="name" name="name" class="form-control" required>
+                            <label for="name">Your name</label>
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-6">
+                        <div class="md-form">
+                            <input type="text" id="email" name="email" class="form-control" required>
+                            <label for="email">Your email</label>
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="md-form mb-0">
+                            <input type="text" id="subject" name="subject" class="form-control" required>
+                            <label for="subject" class="">Subject</label>
+                        </div>
+                    </div>
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-12">
+
+                        <div class="md-form">
+                            <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea" required></textarea>
+                            <label for="message">Your message</label>
+                        </div>
+
+                    </div>
+                </div>
+                <!--Grid row-->
+
+            </form>
+
+            <div class="text-center text-md-left">
+                <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
+            </div>
+            <div class="status"></div>
+        </div>
+        <!--Grid column-->
+
+    </div>
+
+</section>
+<!--Section: Contact v.2-->
 		</div>
 
 <%- include('footer') %>	
