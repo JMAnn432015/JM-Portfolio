@@ -45,7 +45,7 @@ app.get('/contact',(req,res)=>{
 app.post('/mail', urlencodedParser, (req,res)=>{
     const message = {
         to: 'jmannacera@gmail.com',         // List of recipients
-        subject: req.body.subject, // Subject line
+        subject: `Name: ${req.body.name} and email: ${req.body.email}`, // Subject line
         text: req.body.message // Plain text body
     };
     transport.sendMail(message, function(err, info) {
