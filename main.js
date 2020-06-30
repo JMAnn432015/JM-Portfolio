@@ -13,9 +13,9 @@ let transport = nodemailer.createTransport({
     port: 465,
     secure: true,
     auth: {
-       user: 'jmannacera@gmail.com',
+       user: 'jmmonacera@gmail.com',
        pass: 'annmahal'
-    }
+    }   
 });
 
 app.set('view engine','ejs');
@@ -44,7 +44,7 @@ app.get('/contact',(req,res)=>{
 
 app.post('/mail', urlencodedParser, (req,res)=>{
     const message = {
-        to: 'jmmonacera@gmail.com',         // List of recipients
+        to: 'jmannacera@gmail.com',         // List of recipients
         subject: req.body.subject, // Subject line
         text: req.body.message // Plain text body
     };
