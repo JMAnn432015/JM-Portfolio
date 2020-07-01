@@ -4,11 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-<<<<<<< HEAD
+    "dev": "nodemon main",
     "start": "node main"
-=======
-    "dev": "nodemon main"
->>>>>>> dev-branch
   },
   "keywords": [],
   "author": "JM Acera",
