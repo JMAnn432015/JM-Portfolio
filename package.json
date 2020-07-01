@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon main"
+    "start": "node main"
   },
   "keywords": [],
   "author": "JM Acera",
