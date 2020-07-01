@@ -41,7 +41,7 @@
                     <div class="col-md-6">
                         <div class="md-form">
                             <input type="text" id="name" name="name" class="form-control" required>
-                            <label for="name">Your name</label>
+                            <label class="h4" for="name">Your name</label>
                         </div>
                     </div>
                     <!--Grid column-->
@@ -50,22 +50,11 @@
                     <div class="col-md-6">
                         <div class="md-form">
                             <input type="text" id="email" name="email" class="form-control" required>
-                            <label for="email">Your email</label>
+                            <label class="h4" for="email">Your email</label>
                         </div>
                     </div>
                     <!--Grid column-->
 
-                </div>
-                <!--Grid row-->
-
-                <!--Grid row-->
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="md-form mb-0">
-                            <input type="text" id="subject" name="subject" class="form-control" required>
-                            <label for="subject" class="">Subject</label>
-                        </div>
-                    </div>
                 </div>
                 <!--Grid row-->
 
@@ -77,18 +66,20 @@
 
                         <div class="md-form">
                             <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea" required></textarea>
-                            <label for="message">Your message</label>
+                            <label class="h4" for="message">Your message</label>
                         </div>
 
                     </div>
                 </div>
                 <!--Grid row-->
 
+                <div class="text-center text-md-left">
+                    <input type="submit" class="btn btn-primary" value="Send">
+                </div>
+
             </form>
 
-            <div class="text-center text-md-left">
-                <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
-            </div>
+            
             <div class="status"></div>
         </div>
         <!--Grid column-->

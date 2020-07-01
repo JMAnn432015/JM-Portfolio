@@ -3,19 +3,20 @@ const app = express();
 const ejs = require('ejs');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
+require ('custom-env').env('staging');
 
 let port = process.env.PORT || 8000;
 
 let urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 let transport = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 465,
+    host: process.env.NODEMAIL_HOST,
+    port: process.env.NODEMAIL_PORT,
     secure: true,
     auth: {
-       user: 'jmannacera@gmail.com',
-       pass: 'annmahal'
-    }
+       user: process.env.GMAIL_USER,
+       pass: process.env.GMAIL_PASS
+    }   
 });
 
 app.set('view engine','ejs');
@@ -44,8 +45,8 @@ app.get('/contact',(req,res)=>{
 
 app.post('/mail', urlencodedParser, (req,res)=>{
     const message = {
-        to: 'jmmonacera@gmail.com',         // List of recipients
-        subject: req.body.subject, // Subject line
+        to: process.env.PERSONAL_EMAIL,         // List of recipients
+        subject: `Name: ${req.body.name} and email: ${req.body.email}`, // Subject line
         text: req.body.message // Plain text body
     };
     transport.sendMail(message, function(err, info) {
@@ -60,5 +61,5 @@ app.post('/mail', urlencodedParser, (req,res)=>{
 
 app.listen(port,(err)=>{
     if(err) throw err;
-    console.log('Listening at port 8000');
+    console.log('Listening at port '+process.env.PORT);
 });
